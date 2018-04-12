@@ -11,45 +11,44 @@
     <keep-alive>
       <router-view></router-view>
     </keep-alive>
-    <router-view name="applyList"/>
-    <router-view name="winnerList"/>
+    <router-view name="applyList"></router-view>
+    <router-view name="winnerList"></router-view>
   </div>
 </template>
 
 <script>
   export default {
     name: 'app'
-  }
+  };
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scope>
   @import "common/scss/_variable.scss";
   @import "common/scss/_mixin.scss";
 
-  html {
-    background-color: #f2f7f7;
+  html{
+    background-color: #F2F7F7;
   }
-
-  .tab {
-    /*弹性布局*/
+  .tab{
     display: flex;
-    width: 100%;
-    height: 80*$n;
-    line-height: 80*$n;
-    background-color: #fff;
+    width:100%;
+    height:80*$n;
+    line-height:80*$n;
+    background-color:#fff;
     position: relative;
-    .tab-item {
-      flex: 1;
+    .tab-item{
+      flex:1;
       text-align: center;
-      & > a {
+      & > a{
         display: block;
         font-size: 28*$n;
-        color: $black;
-        &.active {
+        color:$black;
+        &.active{
           color: $origin;
           @include border-1px($border-origin)
         }
       }
     }
   }
+
 </style>

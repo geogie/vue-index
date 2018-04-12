@@ -31,6 +31,7 @@
     },
     methods: {
       selectItem(tryitem) {
+        console.log("测试-try-list:" + this.listType + " tryitem：" + tryitem.id)
         if (this.listType === 3) {
           this.$router.push({
             path: `/trying/${tryitem.id}`
@@ -93,12 +94,13 @@
 
 <style rel="stylesheet/scss" lang="scss" scoped>
   @import "../../common/scss/_variable.scss";
-  .trygoods{
+
+  .trygoods {
     position: fixed;
     width: 100%;
     top: 80*$n;
     bottom: 0;
-    .try-list{
+    .try-list {
       height: 100%;
       overflow: hidden;
       padding-bottom: 30*$n;

@@ -71,6 +71,7 @@
     },
     methods: {
       selectItem(tryitem) {
+        console.log("测试-list-view")
         this.$emit('select', tryitem);
       },
       toApplyList(tryitem) {

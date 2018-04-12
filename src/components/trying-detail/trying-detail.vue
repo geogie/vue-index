@@ -3,16 +3,15 @@
     <div v-if="detaildata.product" class="detailpage tryingDetail">
       <item-img :item="detaildata" :listType="listType"></item-img>
       <back @click="hide"></back>
-      <div class="infos">
+      <div class="infos" >
         <item-info :listType="listType" :item="detaildata"></item-info>
       </div>
       <div v-if="detaildata.applayed" class="applyPersons" @click="toapplyList">
-        <apply-persons :list="detaildata.applayed.list" :showmore="showmore" :limit="limit"
-                       class="persons"></apply-persons>
+        <apply-persons :list="detaildata.applayed.list" :showmore="showmore" :limit="limit" class="persons"></apply-persons>
         <span class="applyNum">{{detaildata.applayed.applay_num}}人已申请</span>
       </div>
       <line-line></line-line>
-      <div class="product-detail">
+      <div  class="product-detail">
         <h1 class="title">产品介绍</h1>
         <div class="desc">
           <p v-show="!openmore" class="source">{{detaildata.product.description}}</p>
@@ -24,7 +23,7 @@
       <div class="rule">
         <h1 class="title">产品介绍</h1>
         <div class="desc">
-          <p v-for="item in detaildata.product.try_rule">{{item}}</p>
+          <p  v-for="item in detaildata.product.try_rule">{{item}}</p>
         </div>
       </div>
     </div>
@@ -87,6 +86,8 @@
           });
           return;
         }
+        console.log("测试-trying-detial-->applys-list/id")
+        // 申请名单列表界面
         this.$router.push({
           path: `/applys-list/${this.tryItem.id}`
         });
@@ -105,44 +106,39 @@
 <style lang="scss" rel="stylesheet/scss" scoped>
   @import "../../common/scss/variable";
   @import "../../common/scss/mixin";
-
-  .slide-enter-active, .slide-leave-active {
-    transition: all 0.3s;
+  .slide-enter-active,.slide-leave-active{
+    transition:all 0.3s;
   }
-
-  .slide-enter, .slide-leave-to {
-    transform: translate3d(100%, 0, 0)
+  .slide-enter,.slide-leave-to{
+    transform:translate3d(100%,0,0)
   }
-
-  .infos {
+  .infos{
     position: relative;
-    padding: 0 30*$n 10*$n 30*$n;
-    margin-top: 20*$n;
+    padding:0 30*$n 10*$n 30*$n;
+    margin-top:20*$n;
   }
-
-  .applyPersons {
-    padding: 0 30*$n 30*$n 30*$n;
+  .applyPersons{
+    padding:0 30*$n 30*$n 30*$n;
     font-size: 0;
-    .persons {
+    .persons{
       display: inline-block;
     }
-    .applyNum {
-      float: right;
-      font-size: 24*$n;
+    .applyNum{
+      float:right;
+      font-size:24*$n;
       line-height: 40*$n;
       color: $origin;
       display: block;
-      margin-top: 8*$n;
+      margin-top:8*$n;
     }
   }
-
-  .product-detail, .rule {
+  .product-detail,.rule{
     background-color: #fff;
-    .title {
-      font-size: 28*$n;
+    .title{
+      font-size:28*$n;
       line-height: 80*$n;
       height: 80*$n;
-      padding-left: 30*$n;
+      padding-left:30*$n;
       color: #000;
       @include border-1px($color-e9);
     }
@@ -156,33 +152,32 @@
       }
     }
   }
-
-  .product-detail {
-    .desc {
-      p {
-        &.source {
+  .product-detail{
+    .desc{
+      p{
+        &.source{
           overflow: hidden;
           display: -webkit-box;
-          -webkit-line-clamp: 4;
+          -webkit-line-clamp:4;
           text-overflow: ellipsis;
           -webkit-box-orient: vertical;
         }
 
       }
-      .openbtn {
+      .openbtn{
         position: absolute;
-        bottom: 0;
-        left: 50%;
-        margin-left: -14*$n;
-        padding: 15*$n;
-        width: 28*$n;
-        height: 16*$n;
+        bottom:0;
+        left:50%;
+        margin-left:-14*$n;
+        padding:15*$n;
+        width:28*$n;
+        height:16*$n;
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 28*$n 16*$n;
+        background-size:28*$n 16*$n;
         @include bg-image('arrow');
-        transition: all .3s;
-        &.opened {
+        transition:all .3s;
+        &.opened{
           transform: rotate(180deg);
         }
       }
